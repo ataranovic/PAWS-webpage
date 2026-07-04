@@ -19,9 +19,8 @@
   <meta property="og:site_name" content="Karlsruhe Institute of Technology">
   <meta property="og:title" content="PAWS: Preference Learning with Advantage-Weighted Segments">
   <meta property="og:description" content="PAWS: a segment-based preference learning method that updates policies using segment-level advantage functions, improving temporal credit assignment in RL.">
-  <meta property="og:url" content="https://ataranovic.github.io/PAWS-website/">
-  <!-- TODO: Create a 1200x630px preview image at static/images/social_preview.png -->
-  <meta property="og:image" content="https://ataranovic.github.io/PAWS-website/static/images/social_preview.png">
+  <meta property="og:url" content="https://ataranovic.github.io/PAWS-webpage/">
+  <meta property="og:image" content="https://ataranovic.github.io/PAWS-webpage/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="PAWS: Preference Learning with Advantage-Weighted Segments - Research Preview">
@@ -35,7 +34,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PAWS: Preference Learning with Advantage-Weighted Segments">
   <meta name="twitter:description" content="PAWS: a segment-based preference learning method that updates policies using segment-level advantage functions, improving temporal credit assignment in RL.">
-  <meta name="twitter:image" content="https://ataranovic.github.io/PAWS-website/static/images/social_preview.png">
+  <meta name="twitter:image" content="https://ataranovic.github.io/PAWS-webpage/static/images/social_preview.png">
   <meta name="twitter:image:alt" content="PAWS: Preference Learning with Advantage-Weighted Segments - Research Preview">
 
   <!-- Academic/Research Specific -->
@@ -54,8 +53,8 @@
   <meta name="citation_arxiv_id" content="2606.11982">
 
   <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="theme-color" content="#009682">
+  <meta name="msapplication-TileColor" content="#009682">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
@@ -128,15 +127,15 @@
       "@type": "Organization",
       "name": "International Conference on Machine Learning (ICML)"
     },
-    "url": "https://ataranovic.github.io/PAWS-website/",
-    "image": "https://ataranovic.github.io/PAWS-website/static/images/social_preview.png",
+    "url": "https://ataranovic.github.io/PAWS-webpage/",
+    "image": "https://ataranovic.github.io/PAWS-webpage/static/images/social_preview.png",
     "keywords": ["preference-based reinforcement learning", "PbRL", "reinforcement learning", "temporal credit assignment", "robot learning", "advantage-weighted segments"],
     "abstract": "Preference-based reinforcement learning (PbRL) learns policies from human trajectory-level comparisons, avoiding explicit reward design and expert demonstrations. Existing methods typically train utility functions on trajectory or segment-level preferences while relying on per-step utility estimates during policy optimization. This training and inference mismatch induces a distribution shift that severely degrades temporal credit assignment and limits policy learning. We analyze this issue and propose Preference Learning with Advantage-Weighted Segments (PAWS), a segment-based preference learning method that performs policy updates directly using segment-level advantage functions. By aligning utility training with policy optimization, PAWS preserves trajectory-level preference information and avoids unreliable per-step learning signals. Experiments on simulated robotic manipulation and locomotion tasks demonstrate that PAWS consistently outperforms existing PbRL approaches, highlighting the importance of distribution-consistent preference learning.",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://ataranovic.github.io/PAWS-website/"
+      "@id": "https://ataranovic.github.io/PAWS-webpage/"
     },
     "about": [
       { "@type": "Thing", "name": "Preference-based Reinforcement Learning" },
@@ -152,7 +151,7 @@
     "@type": "Organization",
     "name": "Karlsruhe Institute of Technology",
     "url": "https://www.kit.edu/",
-    "logo": "https://ataranovic.github.io/PAWS-website/static/images/favicon.ico",
+    "logo": "https://ataranovic.github.io/PAWS-webpage/static/images/favicon.ico",
     "sameAs": [
       "https://github.com/ataranovic"
     ]
@@ -178,18 +177,23 @@
             <div class="column has-text-centered">
               <h1 class="title is-1 publication-title">PAWS: Preference Learning with Advantage-Weighted Segments</h1>
               <div class="is-size-5 publication-authors">
-                <span class="author-block"><a href="https://ataranovic.github.io/" target="_blank">Aleksandar Taranovic</a>,</span>
-                <span class="author-block"><a href="https://onur4229.github.io/" target="_blank">Onur Celik</a>,</span>
-                <span class="author-block"><a href="https://nfreymuth.com/" target="_blank">Niklas Freymuth</a>,</span>
-                <span class="author-block"><a href="https://brucegeli.github.io/" target="_blank">Ge Li</a>,</span>
-                <span class="author-block"><a href="https://alr-kit.de/team/serge-thilges/" target="_blank">Serge Thilges</a>,</span>
-                <span class="author-block"><a href="https://www.linkedin.com/in/bao-huy-le/" target="_blank">Huy Le</a>,</span>
-                <span class="author-block"><a href="https://thobotics.github.io/" target="_blank">Tai Hoang</a>,</span>
-                <span class="author-block"><a href="https://www.ifl.kit.edu/mitarbeiter_5688.php" target="_blank">Rania Rayyes</a>,</span>
-                <span class="author-block"><a href="https://alr-kit.de/team/geri/" target="_blank">Gerhard Neumann</a></span>
+                <span class="author-block"><a href="https://ataranovic.github.io/" target="_blank">Aleksandar Taranovic</a><sup>1</sup>,</span>
+                <span class="author-block"><a href="https://onur4229.github.io/" target="_blank">Onur Celik</a><sup>1</sup>,</span>
+                <span class="author-block"><a href="https://nfreymuth.com/" target="_blank">Niklas Freymuth</a><sup>1</sup>,</span>
+                <span class="author-block"><a href="https://brucegeli.github.io/" target="_blank">Ge Li</a><sup>1</sup>,</span>
+                <span class="author-block"><a href="https://alr-kit.de/team/serge-thilges/" target="_blank">Serge Thilges</a><sup>1</sup>,</span>
+                <span class="author-block"><a href="https://www.linkedin.com/in/bao-huy-le/" target="_blank">Huy Le</a><sup>1,2</sup>,</span>
+                <span class="author-block"><a href="https://thobotics.github.io/" target="_blank">Tai Hoang</a><sup>1</sup>,</span>
+                <span class="author-block"><a href="https://www.ifl.kit.edu/mitarbeiter_5688.php" target="_blank">Rania Rayyes</a><sup>3</sup>,</span>
+                <span class="author-block"><a href="https://alr-kit.de/team/geri/" target="_blank">Gerhard Neumann</a><sup>1</sup></span>
               </div>
               <div class="is-size-6 publication-authors">
-                <span class="author-block">Karlsruhe Institute of Technology</span>
+                <span class="author-block"><sup>1</sup>Autonomous Learning Robots, Karlsruhe Institute of Technology</span><br>
+                <span class="author-block"><sup>2</sup>Bosch Center for Artificial Intelligence</span> &nbsp;
+                <span class="author-block"><sup>3</sup>Institute for Material Handling and Logistics (IFL), KIT</span>
+              </div>
+              <div class="is-size-6 publication-authors" style="margin-top: 0.5rem;">
+                <span class="author-block">Published at <strong>ICML 2026</strong></span>
               </div>
 
               <div class="column has-text-centered">
@@ -237,23 +241,32 @@
     </section>
 
 
-    <!-- Teaser video-->
-    <!--
+    <!-- Teaser figure -->
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-            <source src="static/videos/banner_video.mp4" type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered">
-            <strong>TL;DR:</strong> PAWS is a novel preference learning approach that leverages advantage-weighted
-            policy updates on segments to mitigate the temporal credit assignment problem.
+          <figure class="paper-figure" data-fallback="Figure 1 — static/images/figure1_overview.png">
+            <img src="static/images/figure1_overview.png"
+              alt="The temporal credit assignment problem: an advantage model trained on preferred and non-preferred segments constrains only the trajectory-level sum of advantages, so per-step credit assignment is underdetermined."
+              loading="eager"
+              onerror="this.closest('figure').classList.add('is-missing')" />
+            <figcaption>
+              <strong>The Temporal Credit Assignment Problem.</strong> The advantage model is trained on preferred
+              (&tau;<sup>+</sup>) and non-preferred (&tau;<sup>&minus;</sup>) segments, a loss that depends only on the
+              <em>sum</em> of per-step advantages. Many different per-step assignments are consistent with the same
+              preference label, yet policy optimization queries the advantage on individual state&ndash;action pairs &mdash;
+              inducing a distribution shift between segment-level training and step-level inference.
+            </figcaption>
+          </figure>
+          <h2 class="subtitle has-text-centered" style="margin-top: 1.5rem;">
+            <strong>TL;DR:</strong> PAWS performs policy updates directly with <em>segment-level</em> advantage functions,
+            aligning utility training with policy optimization to mitigate the temporal credit assignment problem in
+            preference-based RL.
           </h2>
         </div>
       </div>
     </section>
-    -->
-    <!-- End teaser video -->
+    <!-- End teaser figure -->
 
     <!-- Paper abstract -->
     <section class="section hero is-light">
@@ -281,6 +294,132 @@
       </div>
     </section>
     <!-- End paper abstract -->
+
+
+    <!-- Method / Approach -->
+    <section class="section">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3 has-text-centered">The Training&ndash;Inference Mismatch</h2>
+        <p>
+          Most PbRL methods train a reward or advantage model on <em>segment-level</em> comparisons, but then query
+          that model at the level of <em>individual state&ndash;action pairs</em> during policy optimization. Because
+          the preference loss only constrains the <em>sum</em> of per-step advantages within a segment, many distinct
+          per-step assignments explain the same preference label. This leaves temporal credit assignment fundamentally
+          ambiguous and injects distribution shift into policy learning.
+        </p>
+
+        <figure class="paper-figure" data-fallback="Figure 2 — static/images/figure2_ambiguity.png">
+          <img src="static/images/figure2_ambiguity.png"
+            alt="Four pairs of preferred and non-preferred segments with identical advantage sums but markedly different per-step assignments."
+            loading="lazy"
+            onerror="this.closest('figure').classList.add('is-missing')" />
+          <figcaption>
+            <strong>Ambiguity in per-step credit assignment.</strong> All four segment pairs share the same
+            trajectory-level advantage sum &mdash; and thus the same preference label &mdash; yet their per-step
+            assignments differ markedly. Any consistent per-step assignment is equally compatible with the supervision
+            signal, exposing downstream policy updates to arbitrary choices made by the utility model.
+          </figcaption>
+        </figure>
+
+        <h2 class="title is-3 has-text-centered" style="margin-top: 3rem;">Our Approach: PAWS</h2>
+        <p>
+          PAWS keeps training and inference <em>distribution-consistent</em> by using the learned advantage function
+          directly on trajectory segments during policy optimization:
+        </p>
+        <ol>
+          <li>
+            <strong>Advantage learning.</strong> An advantage function <em>A<sub>&phi;</sub></em> is trained on
+            segment-level preferences via a Bradley&ndash;Terry objective over the difference in cumulative segment
+            advantages. Both an MLP and an encoder-only Transformer parameterization are supported.
+          </li>
+          <li>
+            <strong>Segment-level policy update.</strong> A trust-region-constrained optimization in segment space
+            yields a reweighted segment distribution <em>p*(&tau;) &prop; p<sub>D</sub>(&tau;)&nbsp;exp(A<sub>&phi;</sub>(&tau;)/&lambda;)</em>.
+            Projecting it back onto the policy gives a weighted maximum-likelihood update where <em>every</em> step in a
+            segment shares the segment's advantage weight &mdash; never a per-step utility estimate.
+          </li>
+          <li>
+            <strong>Data-driven step size.</strong> Instead of hand-tuning the KL trust region <em>&epsilon;</em>, PAWS
+            sets it automatically from a target <em>effective sample size</em> <em>n<sub>eff</sub></em> &mdash; an
+            intuitive knob describing how many preferences meaningfully contribute to each policy update.
+          </li>
+        </ol>
+      </div>
+    </section>
+    <!-- End Method -->
+
+
+    <!-- Contributions -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3 has-text-centered">Contributions</h2>
+        <ul>
+          <li>We analyze temporal credit assignment in PbRL through the lens of a <strong>training&ndash;inference
+              distribution shift</strong>, identifying it as a core limitation of existing methods.</li>
+          <li>We propose <strong>PAWS</strong>, a segment-based preference learning method that aligns utility training
+              with policy optimization, enabling reliable propagation of preference signals.</li>
+          <li>We introduce an intuitive, <strong>data-driven strategy</strong> for setting policy-optimization
+              hyperparameters based on the effective sample size of preference-weighted data.</li>
+          <li>We validate PAWS on diverse simulated <strong>manipulation and locomotion tasks</strong>, with both oracle
+              and real-human preferences, showing consistent gains over established baselines.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- End Contributions -->
+
+
+    <!-- Results -->
+    <section class="section">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <p>
+          Across 10 Meta-World manipulation tasks and 4 D4RL locomotion tasks, PAWS consistently outperforms PbRL
+          baselines (BC, P-IQL, CPL, CPL+KL, Preference Transformer, IPL) under both low- (50) and high- (500)
+          preference budgets. The gains are most pronounced in the low-data regime, where per-step utility estimates
+          are noisiest.
+        </p>
+
+        <div class="highlight-grid">
+          <div class="highlight-card">
+            <div class="highlight-number">+36.5%</div>
+            <div class="highlight-label">relative improvement over Behavior Cloning on Meta-World (500 preferences)</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-number">10/10</div>
+            <div class="highlight-label">locomotion settings won &mdash; both PAWS variants beat all baselines on all 4 tasks &times; both budgets</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-number">0.22 vs 0.05</div>
+            <div class="highlight-label">Spearman rank correlation with the expert ranking: segment vs. per-step updates</div>
+          </div>
+        </div>
+
+        <figure class="paper-figure" data-fallback="Table 1 — static/images/table1_metaworld.png">
+          <img src="static/images/table1_metaworld.png"
+            alt="Meta-World task success rates comparing PAWS against baselines for 50 and 500 preferences."
+            loading="lazy"
+            onerror="this.closest('figure').classList.add('is-missing')" />
+          <figcaption>
+            <strong>Meta-World task success (%).</strong> PAWS (MLP) and PAWS (Transformer) achieve the highest average
+            success and the largest improvement over Behavior Cloning across both preference budgets.
+          </figcaption>
+        </figure>
+
+        <figure class="paper-figure" data-fallback="Figure 3 — static/images/figure3_ablations.png">
+          <img src="static/images/figure3_ablations.png"
+            alt="Ablations on the number of effective samples and segment length."
+            loading="lazy"
+            onerror="this.closest('figure').classList.add('is-missing')" />
+          <figcaption>
+            <strong>Ablations.</strong> (a&ndash;b) With abundant data, smaller effective sample sizes allow more
+            aggressive, advantage-driven updates; with scarce data, staying closer to the data distribution helps.
+            (c) State-action updates degrade sharply as segment length grows, while segment-level updates remain stable
+            &mdash; directly reflecting the training&ndash;inference distribution shift.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <!-- End Results -->
 
 
     <!-- Image carousel -->
