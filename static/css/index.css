@@ -783,7 +783,7 @@ a:focus {
 }
 
 .paper-figure.is-missing::before {
-  content: "Figure asset pending — " attr(data-fallback);
+  content: "Figure asset pending: " attr(data-fallback);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -844,4 +844,13 @@ a:focus {
 .figure-row .paper-figure {
   flex: 1 1 320px;
   min-width: 0;
+}
+
+/* Size variants for figures whose source tables are narrow */
+.paper-figure.fig-medium img {
+  max-width: min(100%, 720px);
+}
+
+.paper-figure.fig-small img {
+  max-width: min(100%, 420px);
 }

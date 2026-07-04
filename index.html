@@ -245,7 +245,7 @@
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <figure class="paper-figure" data-fallback="Figure 1 — static/images/figure1_overview.png">
+          <figure class="paper-figure" data-fallback="Figure 1: static/images/figure1_overview.png">
             <img src="static/images/figure1_overview.png"
               alt="The temporal credit assignment problem: an advantage model trained on preferred and non-preferred segments constrains only the trajectory-level sum of advantages, so per-step credit assignment is underdetermined."
               loading="eager"
@@ -254,7 +254,7 @@
               <strong>The Temporal Credit Assignment Problem.</strong> The advantage model is trained on preferred
               (&tau;<sup>+</sup>) and non-preferred (&tau;<sup>&minus;</sup>) segments, a loss that depends only on the
               <em>sum</em> of per-step advantages. Many different per-step assignments are consistent with the same
-              preference label, yet policy optimization queries the advantage on individual state&ndash;action pairs &mdash;
+              preference label, yet policy optimization queries the advantage on individual state&ndash;action pairs,
               inducing a distribution shift between segment-level training and step-level inference.
             </figcaption>
           </figure>
@@ -308,14 +308,14 @@
           ambiguous and injects distribution shift into policy learning.
         </p>
 
-        <figure class="paper-figure" data-fallback="Figure 2 — static/images/figure2_ambiguity.png">
+        <figure class="paper-figure" data-fallback="Figure 2: static/images/figure2_ambiguity.png">
           <img src="static/images/figure2_ambiguity.png"
             alt="Four pairs of preferred and non-preferred segments with identical advantage sums but markedly different per-step assignments."
             loading="lazy"
             onerror="this.closest('figure').classList.add('is-missing')" />
           <figcaption>
             <strong>Ambiguity in per-step credit assignment.</strong> All four segment pairs share the same
-            trajectory-level advantage sum &mdash; and thus the same preference label &mdash; yet their per-step
+            trajectory-level advantage sum, and thus the same preference label, yet their per-step
             assignments differ markedly. Any consistent per-step assignment is equally compatible with the supervision
             signal, exposing downstream policy updates to arbitrary choices made by the utility model.
           </figcaption>
@@ -336,11 +336,11 @@
             <strong>Segment-level policy update.</strong> A trust-region-constrained optimization in segment space
             yields a reweighted segment distribution <em>p*(&tau;) &prop; p<sub>D</sub>(&tau;)&nbsp;exp(A<sub>&phi;</sub>(&tau;)/&lambda;)</em>.
             Projecting it back onto the policy gives a weighted maximum-likelihood update where <em>every</em> step in a
-            segment shares the segment's advantage weight &mdash; never a per-step utility estimate.
+            segment shares the segment's advantage weight, never a per-step utility estimate.
           </li>
           <li>
             <strong>Data-driven step size.</strong> Instead of hand-tuning the KL trust region <em>&epsilon;</em>, PAWS
-            sets it automatically from a target <em>effective sample size</em> <em>n<sub>eff</sub></em> &mdash; an
+            sets it automatically from a target <em>effective sample size</em> <em>n<sub>eff</sub></em>, an
             intuitive knob describing how many preferences meaningfully contribute to each policy update.
           </li>
         </ol>
@@ -395,7 +395,7 @@
         </div>
 
         <h3 class="title is-4" style="margin-top: 2.5rem;">Meta-World Manipulation</h3>
-        <figure class="paper-figure" data-fallback="Table 1 — static/images/table1_metaworld.png">
+        <figure class="paper-figure" data-fallback="Table 1: static/images/table1_metaworld.png">
           <img src="static/images/table1_metaworld.png"
             alt="Meta-World task success rates comparing PAWS against baselines for 50 and 500 preferences."
             loading="lazy"
@@ -408,7 +408,7 @@
         </figure>
 
         <h3 class="title is-4" style="margin-top: 2.5rem;">Locomotion</h3>
-        <figure class="paper-figure" data-fallback="Table 2 — static/images/table2_locomotion.png">
+        <figure class="paper-figure" data-fallback="Table 2: static/images/table2_locomotion.png">
           <img src="static/images/table2_locomotion.png"
             alt="Locomotion task average episode returns comparing PAWS against baselines for 50 and 500 preferences."
             loading="lazy"
@@ -426,7 +426,7 @@
           on Button Press and Door Open. Each seed was trained on the labels of a single distinct labeler, so the
           variance reflects both seed and labeler variability.
         </p>
-        <figure class="paper-figure" data-fallback="Table 3 — static/images/table3_human.png">
+        <figure class="paper-figure fig-medium" data-fallback="Table 3: static/images/table3_human.png">
           <img src="static/images/table3_human.png"
             alt="Task success with human-collected preferences from 10 non-author participants on Button Press and Door Open."
             loading="lazy"
@@ -440,12 +440,12 @@
         <h3 class="title is-4" style="margin-top: 2.5rem;">Segment- vs. State-Action-Based Updates</h3>
         <p>
           The core claim of the paper made measurable: querying the same learned advantage function per-step instead of
-          per-segment reintroduces the distribution shift &mdash; and costs up to 15 points of success rate. Shortening
+          per-segment reintroduces the distribution shift and costs up to 15 points of success rate. Shortening
           segments at update time degrades performance monotonically even when the advantage function itself was
           trained on long segments.
         </p>
         <div class="figure-row">
-          <figure class="paper-figure" data-fallback="Table 4 — static/images/table4_seg_vs_state.png">
+          <figure class="paper-figure fig-small" data-fallback="Table 4: static/images/table4_seg_vs_state.png">
             <img src="static/images/table4_seg_vs_state.png"
               alt="Aggregated success rates for segment-level versus state-action-level policy updates with MLP and Transformer architectures."
               loading="lazy"
@@ -455,7 +455,7 @@
               for both architectures and both preference budgets.
             </figcaption>
           </figure>
-          <figure class="paper-figure" data-fallback="Table 5 — static/images/table5_segment_length.png">
+          <figure class="paper-figure fig-small" data-fallback="Table 5: static/images/table5_segment_length.png">
             <img src="static/images/table5_segment_length.png"
               alt="Success rate decreases monotonically as the update-time segment length shrinks."
               loading="lazy"
@@ -468,7 +468,7 @@
         </div>
 
         <h3 class="title is-4" style="margin-top: 2.5rem;">Ablations</h3>
-        <figure class="paper-figure" data-fallback="Figure 3 — static/images/figure3_ablations.png">
+        <figure class="paper-figure" data-fallback="Figure 3: static/images/figure3_ablations.png">
           <img src="static/images/figure3_ablations.png"
             alt="Ablations on the number of effective samples and segment length."
             loading="lazy"
@@ -476,8 +476,8 @@
           <figcaption>
             <strong>Ablations.</strong> (a&ndash;b) With abundant data, smaller effective sample sizes allow more
             aggressive, advantage-driven updates; with scarce data, staying closer to the data distribution helps.
-            (c) State-action updates degrade sharply as segment length grows, while segment-level updates remain stable
-            &mdash; directly reflecting the training&ndash;inference distribution shift.
+            (c) State-action updates degrade sharply as segment length grows, while segment-level updates remain stable,
+            directly reflecting the training&ndash;inference distribution shift.
           </figcaption>
         </figure>
 
