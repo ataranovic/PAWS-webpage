@@ -832,3 +832,16 @@ a:focus {
   color: var(--text-secondary);
   line-height: 1.45;
 }
+
+/* Side-by-side figures (stack on mobile) */
+.figure-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.figure-row .paper-figure {
+  flex: 1 1 320px;
+  min-width: 0;
+}

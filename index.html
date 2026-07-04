@@ -94,7 +94,7 @@
   </noscript>
 
   <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -382,18 +382,19 @@
         <div class="highlight-grid">
           <div class="highlight-card">
             <div class="highlight-number">+36.5%</div>
-            <div class="highlight-label">relative improvement over Behavior Cloning on Meta-World (500 preferences)</div>
+            <div class="highlight-label">over Behavior Cloning on Meta-World<br>(500 preferences)</div>
           </div>
           <div class="highlight-card">
-            <div class="highlight-number">10/10</div>
-            <div class="highlight-label">locomotion settings won &mdash; both PAWS variants beat all baselines on all 4 tasks &times; both budgets</div>
+            <div class="highlight-number">8 / 8</div>
+            <div class="highlight-label">locomotion settings where PAWS beats every baseline</div>
           </div>
           <div class="highlight-card">
-            <div class="highlight-number">0.22 vs 0.05</div>
-            <div class="highlight-label">Spearman rank correlation with the expert ranking: segment vs. per-step updates</div>
+            <div class="highlight-number">4&times;</div>
+            <div class="highlight-label">higher rank correlation with the expert's segment ranking (0.22 vs. 0.05 per-step)</div>
           </div>
         </div>
 
+        <h3 class="title is-4" style="margin-top: 2.5rem;">Meta-World Manipulation</h3>
         <figure class="paper-figure" data-fallback="Table 1 — static/images/table1_metaworld.png">
           <img src="static/images/table1_metaworld.png"
             alt="Meta-World task success rates comparing PAWS against baselines for 50 and 500 preferences."
@@ -401,10 +402,72 @@
             onerror="this.closest('figure').classList.add('is-missing')" />
           <figcaption>
             <strong>Meta-World task success (%).</strong> PAWS (MLP) and PAWS (Transformer) achieve the highest average
-            success and the largest improvement over Behavior Cloning across both preference budgets.
+            success and the largest improvement over Behavior Cloning across both preference budgets. In the low-data
+            regime (50 preferences) several baselines even fall below Behavior Cloning, while PAWS keeps improving.
           </figcaption>
         </figure>
 
+        <h3 class="title is-4" style="margin-top: 2.5rem;">Locomotion</h3>
+        <figure class="paper-figure" data-fallback="Table 2 — static/images/table2_locomotion.png">
+          <img src="static/images/table2_locomotion.png"
+            alt="Locomotion task average episode returns comparing PAWS against baselines for 50 and 500 preferences."
+            loading="lazy"
+            onerror="this.closest('figure').classList.add('is-missing')" />
+          <figcaption>
+            <strong>Locomotion average episode returns.</strong> On Ant, HalfCheetah, Hopper, and Walker2d, both PAWS
+            variants outperform all baselines across both preference budgets, with the same hyperparameters and policy
+            architecture for all methods.
+          </figcaption>
+        </figure>
+
+        <h3 class="title is-4" style="margin-top: 2.5rem;">Real Human Preferences</h3>
+        <p>
+          Beyond oracle labels, we collected 50 pairwise comparisons per task from each of 10 non-author human labelers
+          on Button Press and Door Open. Each seed was trained on the labels of a single distinct labeler, so the
+          variance reflects both seed and labeler variability.
+        </p>
+        <figure class="paper-figure" data-fallback="Table 3 — static/images/table3_human.png">
+          <img src="static/images/table3_human.png"
+            alt="Task success with human-collected preferences from 10 non-author participants on Button Press and Door Open."
+            loading="lazy"
+            onerror="this.closest('figure').classList.add('is-missing')" />
+          <figcaption>
+            <strong>Human-collected preferences.</strong> The results mirror the oracle setting: PAWS (MLP) achieves
+            the highest success rate on both tasks, with PAWS (Transformer) second on Door Open.
+          </figcaption>
+        </figure>
+
+        <h3 class="title is-4" style="margin-top: 2.5rem;">Segment- vs. State-Action-Based Updates</h3>
+        <p>
+          The core claim of the paper made measurable: querying the same learned advantage function per-step instead of
+          per-segment reintroduces the distribution shift &mdash; and costs up to 15 points of success rate. Shortening
+          segments at update time degrades performance monotonically even when the advantage function itself was
+          trained on long segments.
+        </p>
+        <div class="figure-row">
+          <figure class="paper-figure" data-fallback="Table 4 — static/images/table4_seg_vs_state.png">
+            <img src="static/images/table4_seg_vs_state.png"
+              alt="Aggregated success rates for segment-level versus state-action-level policy updates with MLP and Transformer architectures."
+              loading="lazy"
+              onerror="this.closest('figure').classList.add('is-missing')" />
+            <figcaption>
+              <strong>Update granularity.</strong> Segment-level updates (PAWS) clearly beat state-action-level updates
+              for both architectures and both preference budgets.
+            </figcaption>
+          </figure>
+          <figure class="paper-figure" data-fallback="Table 5 — static/images/table5_segment_length.png">
+            <img src="static/images/table5_segment_length.png"
+              alt="Success rate decreases monotonically as the update-time segment length shrinks."
+              loading="lazy"
+              onerror="this.closest('figure').classList.add('is-missing')" />
+            <figcaption>
+              <strong>Update-time segment length.</strong> With a fixed advantage function trained on length-64
+              segments, success drops monotonically as update segments get shorter.
+            </figcaption>
+          </figure>
+        </div>
+
+        <h3 class="title is-4" style="margin-top: 2.5rem;">Ablations</h3>
         <figure class="paper-figure" data-fallback="Figure 3 — static/images/figure3_ablations.png">
           <img src="static/images/figure3_ablations.png"
             alt="Ablations on the number of effective samples and segment length."
@@ -417,6 +480,12 @@
             &mdash; directly reflecting the training&ndash;inference distribution shift.
           </figcaption>
         </figure>
+
+        <p style="margin-top: 1.5rem;">
+          To quantify temporal credit assignment directly, we also measure Spearman's rank correlation between each
+          learned policy's action likelihoods and the expert's: segment-based updates preserve the expert's ranking far
+          better (<em>r<sub>s</sub></em> = 0.22) than per-step updates (<em>r<sub>s</sub></em> = 0.05).
+        </p>
       </div>
     </section>
     <!-- End Results -->
@@ -483,9 +552,10 @@
       </div>
     </section>
     <!--End BibTex citation -->
+  </main>
 
 
-    <footer class="footer">
+  <footer class="footer">
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-8">
@@ -505,7 +575,7 @@
           </div>
         </div>
       </div>
-    </footer>
+  </footer>
 
     <!-- Statcounter tracking code -->
 
